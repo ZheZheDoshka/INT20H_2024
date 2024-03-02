@@ -2,17 +2,12 @@ import collections
 collections.Iterable = collections.abc.Iterable
 
 import pandas as pd
-import numpy as np
 
 from pathlib import Path
 
-import torch
-
-from torchvision.datasets import ImageFolder
 from torchvision import transforms
 from torch.utils.data import DataLoader
 from torch.utils.data import Dataset
-import torchvision
 
 from PIL import Image
 
@@ -41,7 +36,6 @@ class ImageDataset(Dataset):
 
     def __getitem__(self, idx):
         img_path = self.df["image_path"][idx]
-        # print(img_path)
         # image = plt.imread(img_path)
         image = Image.open(img_path)
 
