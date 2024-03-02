@@ -3,3 +3,4 @@ matplotlib
 opencv-python
 dlib  # For deepface
 deepface
+tqdm
