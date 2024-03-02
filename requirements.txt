@@ -4,4 +4,3 @@ opencv-python
 dlib  # For deepface
 deepface
 tqdm
-facenet_pytorch
