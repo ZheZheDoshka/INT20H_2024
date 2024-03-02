@@ -4,4 +4,4 @@ opencv-python
 dlib  # For deepface
 deepface
 tqdm
-facenet_pytorch
+facenet_pytorch  # Bugged, just install once and ignore warning about it
