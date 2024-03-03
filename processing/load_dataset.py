@@ -56,7 +56,7 @@ class ImageDataset(Dataset):
 
 def generate_df(image_dir):
     path = Path(image_dir)
-    data = [p for p in path.glob('*')]
+    data = [p for p in path.glob('*') if not p.name.endswith('mask.jpg')]
     data = pd.DataFrame({'image_path': data})
     return data
 
