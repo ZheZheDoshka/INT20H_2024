@@ -4,7 +4,7 @@ Repository for INT20H 2024 team project of Криптомонахи team
 
 Task description is available [here](case_hakaton.pdf) \
 Dataset for the project is available [here](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/static/wiki_crop.tar)
-Clustering result example is available [here](https://www.dropbox.com/scl/fi/l36mai3nn53xslghythjx/PCA_11_i.zip?rlkey=zf6uli8jmby6gr3tvb7sh0tj7&dl=0)
+Clustering result example is available [here](https://www.dropbox.com/scl/fi/l36mai3nn53xslghythjx/PCA_11_i.zip?rlkey=zf6uli8jmby6gr3tvb7sh0tj7&dl=0) \
 Average faces for clustering example is available [here](examples%2Faverage_faces)
 
 ### File structure:
