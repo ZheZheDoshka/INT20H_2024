@@ -36,7 +36,8 @@ class ImageDataset(Dataset):
         img_path = self.df['image_path'][idx]
         # image = plt.imread(img_path)
         image = Image.open(img_path)
-
+        bbox = self.df['bbox'][idx]
+        image = image.crop(bbox)
         # image = Image.fromarray((image)*255)
         # image = Image.fromarray(np.uint8((image)*255))
 
@@ -56,8 +57,14 @@ class ImageDataset(Dataset):
 
 def generate_df(image_dir):
     path = Path(image_dir)
-    data = [p for p in path.glob('*')]
-    data = pd.DataFrame({'image_path': data})
+    json_df = pd.read_json('../data/filtered_pose_mirrored.json')
+    json_df = json_df.transpose()
+    json_idx = json_df.index.to_list()
+    data = [[p, json_df.loc[[str(p.name)]]] for p in path.glob('*') if (not p.name.endswith('mask.jpg'))
+            and (p.name in json_idx)]
+    image_path = [d[0] for d in data]
+    bbox = [(d[1])['bbox'].values[0] for d in data]
+    data = pd.DataFrame({'image_path': image_path, 'bbox' : bbox})
     return data
 
 
@@ -73,5 +80,6 @@ def generate_dataset(data_path: str | None = None):
 
     dataset = ImageDataset(img_dir, df=data, transform=base_transform)
     data_loader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True)
+
 
     return data, dataset, data_loader
