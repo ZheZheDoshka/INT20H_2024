@@ -27,7 +27,7 @@ Average faces for clustering example is available [here](examples%2Faverage_face
 
 ### Notebooks:
 Presented in the order of execution
-- image_filtering.ipynb - initial filtering of the dataset to reduce the number of images
+- [image_filtering.ipynb](notebooks%2Fimage_filtering.ipynb) - initial filtering of the dataset to reduce the number of images
 - [processing_opencv_pose_detection.ipynb](notebooks%2Fprocessing_opencv_pose_detection.ipynb) - processing the dataset with basic OpenCV pose detection
 - [processing_mtcnn_pose_detection.ipynb](notebooks%2Fprocessing_mtcnn_pose_detection.ipynb) - processing the dataset with advanced MTCNN pose detection based on angle between eyes and nose
 - [processing_merge.ipynb](notebooks%2Fprocessing_merge.ipynb) - merging the results of initial filtering and MTCNN pose detection
